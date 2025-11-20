@@ -89,7 +89,7 @@ const Resume = () => {
     },
     {
       position: "Software Developer",
-      company: "Andela",
+      company: "Accenture",
       duration: "January 2009 – January 2012",
       description:
         "Built internal CRM and workflow automation tools to streamline operations across distributed teams.",
