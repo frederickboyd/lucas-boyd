@@ -15,30 +15,30 @@ const Academics = () => {
   const education = [
     {
       id: 1,
-      institution: "Strayer University, Washington, D.C.",
+      institution: "Kennesaw State University",
       degree: "Master of Science (M.S.)",
-      field: "Software Engineering",
-      duration: "August 2012 – May 2016",
-      location: "Washington, D.C., USA",
-      cgpa: "Completed",
+      field: "Computer Science",
+      duration: "August 2007 – May 2009",
+      location: "Kennesaw, Georgia, USA",
+      status: "Completed",
       details: [
-        "Focused on enterprise software architecture, distributed systems, and cloud-based application design.",
-        "Completed advanced coursework in DevOps automation, microservices, and AI-driven development tools.",
-        "Conducted a capstone project on scalable cloud-native systems using AWS and .NET Core."
+        "Completed graduate studies in computer science with focus on software development and distributed systems.",
+        "Worked on projects involving cloud-based solutions, backend engineering, and modern application architecture.",
+        "Built a capstone project demonstrating scalable system design and real-world engineering practices."
       ]
     },
     {
       id: 2,
-      institution: "Temple University, Philadelphia, PA",
+      institution: "Kennesaw State University",
       degree: "Bachelor of Science (B.S.)",
       field: "Computer Science",
       duration: "August 2003 – May 2007",
-      location: "Philadelphia, Pennsylvania, USA",
-      cgpa: "Completed",
+      location: "Kennesaw, Georgia, USA",
+      status: "Completed",
       details: [
-        "Completed core studies in software engineering, algorithms, and data structures.",
-        "Focused on enterprise system design, object-oriented programming, and databases.",
-        "Collaborated on academic research projects using Java, C#, and SQL."
+        "Completed core coursework in algorithms, data structures, operating systems, and software engineering.",
+        "Developed academic projects using Java, C#, SQL, and foundational web technologies.",
+        "Collaborated with peers on system design practices, OOP principles, and database-driven applications."
       ]
     }
   ];

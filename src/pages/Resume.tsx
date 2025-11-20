@@ -27,23 +27,22 @@ const Resume = () => {
   // EDUCATION
   const education = [
     {
-      institution: "Strayer University, Washington, D.C.",
+      institution: "Kennesaw State University",
       degree: "Master of Science (M.S.)",
-      field: "Software Engineering",
-      duration: "August 2012 – May 2016",
-      gpa: "Completed",
-      location: "Washington, D.C., USA",
+      field: "Computer Science",
+      duration: "August 2007 – May 2009",
+      status: "Completed",
+      location: "Kennesaw, Georgia, USA",
     },
     {
-      institution: "Temple University, Philadelphia, PA",
+      institution: "Kennesaw State University",
       degree: "Bachelor of Science (B.S.)",
       field: "Computer Science",
       duration: "August 2003 – May 2007",
-      gpa: "Completed",
-      location: "Philadelphia, Pennsylvania, USA",
+      status: "Completed",
+      location: "Kennesaw, Georgia, USA",
     },
   ];
-
   // EXPERIENCE
   const experience = [
     {
@@ -403,11 +402,10 @@ const Resume = () => {
                 onClick={() => setActiveTab(tab.id)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`flex items-center px-4 py-2 rounded-lg transition-colors ${
-                  activeTab === tab.id
+                className={`flex items-center px-4 py-2 rounded-lg transition-colors ${activeTab === tab.id
                     ? "bg-brand-purple text-white"
                     : "bg-secondary/30 text-muted-foreground hover:bg-secondary/50"
-                }`}
+                  }`}
               >
                 {tab.icon}
                 <span className="ml-2">{tab.label}</span>
