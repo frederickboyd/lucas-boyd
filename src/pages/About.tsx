@@ -215,7 +215,7 @@ const About = () => {
               <InfoCard icon={GraduationCap} title="Education & Growth">
                 <ul className="space-y-2 text-muted-foreground">
                   {[
-                    "B.S. in Computer Science — Temple University",
+                    "B.S. in Computer Science — Kennesaw University",
                     "Advanced coursework in software design & architecture",
                     "Hands-on experience with cloud and distributed systems",
                     "Lifelong learner in AI, DevOps, and system scaling",
