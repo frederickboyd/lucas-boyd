@@ -4,6 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useTheme } from "./ThemeProvider";
+import { Download } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,7 +31,7 @@ const Navbar = () => {
     { name: "About", path: "/about" },
     { name: "Academics", path: "/academics" },
     { name: "Projects", path: "/projects" },
-    { name: "Resume", path: "/resume" },
+    { name: "Resume", path: "/uploads/resume.pdf", download: true },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -65,8 +66,8 @@ const Navbar = () => {
     },
   };
 
-  const bgClass = theme === "dark" 
-    ? (isScrolled ? "py-3 bg-brand-dark/90 backdrop-blur-md shadow-md" : "py-5") 
+  const bgClass = theme === "dark"
+    ? (isScrolled ? "py-3 bg-brand-dark/90 backdrop-blur-md shadow-md" : "py-5")
     : (isScrolled ? "py-3 bg-white/90 backdrop-blur-md shadow-md" : "py-5");
 
   return (
@@ -99,14 +100,46 @@ const Navbar = () => {
                 animate="visible"
                 variants={linkVariants}
               >
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                >
-                  {link.name}
-                </NavLink>
+                {link.download ? (
+                  // Resume with matching nav-item design and small icon
+                  <a
+                    href={link.path}
+                    onClick={(e) => {
+                      e.preventDefault(); // stop navigation
+                      const linkEl = document.createElement("a");
+                      linkEl.href = link.path;
+                      linkEl.download = "resume.pdf";
+                      linkEl.click(); // trigger download only
+                    }}
+                    className="nav-link flex items-center gap-1"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="w-4 h-4"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-9-12v12m0 0l-3.75-3.75M12 16.5l3.75-3.75"
+                      />
+                    </svg>
+                    {link.name}
+                  </a>
+                ) : (
+                  // Other nav items
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `nav-link ${isActive ? "active" : ""}`
+                    }
+                  >
+                    {link.name}
+                  </NavLink>
+                )}
               </motion.div>
             ))}
           </div>
@@ -138,8 +171,7 @@ const Navbar = () => {
                   key={link.name}
                   to={link.path}
                   className={({ isActive }) =>
-                    `text-lg font-medium py-2 border-b border-muted/20 ${
-                      isActive ? "text-brand-purple" : "text-foreground"
+                    `text-lg font-medium py-2 border-b border-muted/20 ${isActive ? "text-brand-purple" : "text-foreground"
                     }`
                   }
                 >
